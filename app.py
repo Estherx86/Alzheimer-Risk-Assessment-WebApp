@@ -1,12 +1,12 @@
 import streamlit as st
 import numpy as np
-from tensorflow.keras.models import load_model
+# from tensorflow.keras.models import load_model
+import pickle
 
-# Load the trained ANN model
-# model = tf.keras.models.load_model('model\model.pkl')
 
-# Load the model
-model = load_model(r'C:\Personal\Programming & Crypto\Jigsaw\alz\model\ann.h5')
+PATH = r"model\xgb_model_tuned.pkl"
+with open(PATH, "rb") as file2:
+    model = pickle.load(file2)
 
 # Set up the app title
 st.title("Alzheimer's Disease Prediction")
